@@ -9,10 +9,12 @@
     "skipLibCheck": true,
     "pretty": true,
     "newLine": "lf",
-    "outDir": "dist",
+    "outDir": "dist/esm",
     "forceConsistentCasingInFileNames": true,
     "lib": ["ES2020"],
     "allowSyntheticDefaultImports": true,
     "sourceMap": true
-  }
+  },
+  "exclude": ["node_modules", "*.test.ts", "dist"],
+  "include": ["index.ts"]
 }
