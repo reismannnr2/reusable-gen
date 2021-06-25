@@ -1,0 +1,10 @@
+.gitignore
+.eslintrc.json
+.prettierignore
+.prettierrc
+index.ts
+index.test.ts
+*.test.js
+*.test.d.ts
+*.test.d.ts.map
+*.test.js.map
