@@ -7,6 +7,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reismannnr2/reusable-gen"
+  },
   "scripts": {
     "test": "jest",
     "build": "tsc",
