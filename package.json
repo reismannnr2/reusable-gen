@@ -1,12 +1,12 @@
 {
   "name": "@reismannnr2/reusable-gen",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "utility class for converting a js- and ts-generator into reusable list",
   "main": "dist/commonjs/index.js",
   "module": "dist/esm/index.js",
   "exports": {
     "import": "./dist/esm/index.js",
-    "require": "./dist/commonjs/index.cjs"
+    "require": "./dist/commonjs/index.js"
   },
   "types": "./dist/esm/index.d.ts",
   "publishConfig": {
