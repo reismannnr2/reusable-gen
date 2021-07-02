@@ -64,7 +64,7 @@ yarn add @reismannnr2/reusable-gen
 
 Just wrap generator instance with reusable() and call ReusableGenerator#use() method when you want to iterate from first element.
 
-If you want to create a child generator which iterates "rest" values of parent generator, then call ReusableGenerator#use() after some values popped from parent.
+If you want to create a child generator which iterates "rest" values of parent generator, then call ReusableGenerator#rest() after some values popped from parent.
 
 ```javascript
 import { reusable } from 'reusable-gen';
