@@ -247,6 +247,15 @@ export class ReusableGenerator<T> implements IterableIterator<T> {
     return reusable(gen);
   }
 
+  asNonEmpty(): NonEmptyGenerator<T> {
+    const src = this.use();
+    const first = src.next();
+    if (first.done) {
+      throw new TypeError('Method asNonEmpty() is called for ReusableGenerator, but it was empty!');
+    }
+    return this.use() as NonEmptyGenerator<T>;
+  }
+
   // Consumers
   head(): T | undefined {
     const head = this.use().next();
