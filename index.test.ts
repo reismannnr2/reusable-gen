@@ -1,8 +1,8 @@
-import { reusable } from './index';
+import { reusable, ReusableGenerator } from './index';
 
 describe('ReusableGenerator', () => {
   test('should be always done for done generator', () => {
-    expect([...reusable((function* () {})())]).toHaveLength(0);
+    expect([...ReusableGenerator.from([])]).toHaveLength(0);
     expect(
       (() => {
         const gen = (function* () {
