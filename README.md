@@ -91,3 +91,9 @@ console.log([...base.rest()]) // []
 // but you can iterate from first by base.use():
 console.log([...base.use()]);
 ```
+
+## Array-like methods
+
+Some array-like methods like map() and filter(), etc are provided.
+
+See the doc comment for details.

@@ -3,7 +3,7 @@
 .prettierignore
 .prettierrc
 index.ts
-index.test.ts
+index.foo.ts
 *.test.js
 *.test.d.ts
 *.test.d.ts.map
