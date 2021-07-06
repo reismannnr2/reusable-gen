@@ -540,6 +540,14 @@ export class ReusableGenerator<T> implements IterableIterator<T> {
     return champion;
   }
 
+  /**
+   * Just like Kotlin's let. It allows you to use any functions in a method chain which take ReusableGenerator<T> as an argument.
+   * @param transform callback which takes this as an argument, returns result of it.
+   */
+  let<R>(transform: (self: ReusableGenerator<T>) => R): R {
+    return transform(this);
+  }
+
   [Symbol.iterator](): ReusableGenerator<T> {
     return this;
   }

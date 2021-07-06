@@ -97,3 +97,21 @@ console.log([...base.use()]);
 Some array-like methods like map() and filter(), etc are provided.
 
 See the doc comment for details.
+
+## let method
+
+I added `let()` method for this class. It takes a function which takes `this` as an argument,
+and just call it and return the result of it.
+
+It allows you to a function which takes `ReusableGenerator<T>` as an argument.
+
+```typescript
+// We can't define such method for ReusableGenerator<number> since TypeScript doesn't have specialization.
+// but...
+function max(gen: ReusableGenerator<number>): number | undefined {
+  return gen.champion((champ, challenger) => champ >= challenger);
+}
+
+// with let you can call the function in method chain.
+const maxItem = rgen('1', '2', '3').map((v) => parseInt(v)).let(max);
+```

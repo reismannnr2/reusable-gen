@@ -255,4 +255,23 @@ describe('ReusableGenerator', () => {
   test('intoRgen() should create an generator from an iterable', () => {
     expect(intoRgen([1, 2, 3]).collect()).toEqual([1, 2, 3]);
   });
+  describe('let()', () => {
+    test('let() should return the result of given function', () => {
+      const id = {};
+      const mockFn = jest.fn(() => id);
+      const gen = rgen();
+      expect(gen.let(mockFn)).toBe(id);
+      expect(mockFn).toHaveBeenCalledWith(gen);
+    });
+    test('can be used as extension function', () => {
+      const max = (gen: ReusableGenerator<number>): number | undefined => {
+        return gen.champion((champion, challenger) => champion >= challenger);
+      };
+      expect(
+        rgen('1', '4', '2')
+          .map((v) => parseInt(v))
+          .let(max),
+      ).toBe(4);
+    });
+  });
 });
